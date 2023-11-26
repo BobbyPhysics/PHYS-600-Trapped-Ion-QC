@@ -1,0 +1,118 @@
+% ****** Start of file apssamp.tex ******
+%
+%   This file is part of the APS files in the REVTeX 4.2 distribution.
+%   Version 4.2a of REVTeX, December 2014
+%
+%   Copyright (c) 2014 The American Physical Society.
+%
+%   See the REVTeX 4 README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.2
+%
+% See the REVTeX 4 README file
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex apssamp.tex
+%  2)  bibtex apssamp
+%  3)  latex apssamp.tex
+%  4)  latex apssamp.tex
+%
+\documentclass[%
+ reprint,
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose, 
+%preprint,
+%preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ aps,
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+%floatfix,
+]{revtex4-2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COMMENT THIS OUT TO TEST PAGE LENGTH WITHOUT FIGURES
+%
+\usepackage{graphicx}% Include figure files
+    \graphicspath{{./Figures/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage{hyperref}% add hypertext capabilities
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+
+%\usepackage[showframe,%Uncomment any one of the following lines to test 
+%%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
+%%text={7in,10in},centering,
+%%margin=1.5in,
+%%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
+%%height=10in,a5paper,hmargin={3cm,0.8in},
+%]{geometry}
+\usepackage{braket}
+\usepackage{import}
+\usepackage[euler]{textgreek}
+\usepackage{physics}
+\usepackage{siunitx}
+    \DeclareSIUnit\gauss{G}
+\usepackage{listings}
+\usepackage{xcolor}
+    \definecolor{codegreen}{rgb}{0,0.6,0}
+    \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+    \definecolor{codepurple}{rgb}{0.58,0,0.82}
+    \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+    
+    \lstdefinestyle{mystyle}{
+        backgroundcolor=\color{backcolour},   
+        commentstyle=\color{codegreen},
+        keywordstyle=\color{magenta},
+        numberstyle=\tiny\color{codegray},
+        stringstyle=\color{codepurple},
+        basicstyle=\ttfamily\footnotesize,
+        breakatwhitespace=false,         
+        breaklines=true,                 
+        captionpos=b,                    
+        keepspaces=true,                 
+        numbers=left,                    
+        numbersep=5pt,                  
+        showspaces=false,                
+        showstringspaces=false,
+        showtabs=false,                  
+        tabsize=2
+    }
+    \lstset{style=mystyle}
+    
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\ion}[3]{\textsuperscript{#1}{#2}\textsuperscript{#3}}
+\newcommand{\state}[3]{\textsuperscript{#1}{#2}\textsubscript{#3}}
+
+\usepackage{textcomp}
+\renewcommand{\tilde}{\raisebox{0.5ex}{\texttildelow}}
+
+\begin{document}
+
+%%\preprint{APS/123-QED}
+
+\import{Sections/}{0-Title.tex}
+\import{Sections/}{1-Trapped Ions.tex}
+\import{Sections/}{2-Trap Configuration.tex}
+\import{Sections/}{3-Coulomb Crystals.tex}
+\import{Sections/}{4-Conclusion.tex}
+\import{Sections/}{5-Acknowledgements.tex}
+% \clearpage
+\import{Sections/}{6-Bibliography.tex}
+
+\end{document}Top500
+%
+% ****** End of file apssamp.tex ******
