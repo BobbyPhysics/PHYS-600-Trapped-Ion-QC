@@ -12,7 +12,11 @@ The method employed by Zhang \textit{et al.} for confinement of long ion chains 
 
 More recently, a flexible scheme for maintaining efficient entanglement between ions in a long chain as the size scales up has been introduced by Leung and Brown. By utilizing both amplitude and frequency modulation, they were able to apply high-fidelity pulse sequences to drive transverse motional modes, which can suppress gate errors. Those pulses in turn require greater power to operate, so there is a trade-off between higher tolerance against errors and power efficiency \cite{Leung}.
 
-For all the benefits afforded by the simplicity 
+While linear arrays remain a promising area of research, there are some shortcomings to this particular trap geometry. In general, as the size of the ion chain increases, there is weaker motional coupling between ions with ion-ion coupling strength falling off as $1/s^\alpha$ where $s$ is the distance between two ions. That then leads to limitations such as decreasing speed of qubit gates and a corresponding increase in noise-induced heating in the system (due to the gates taking longer) \cite{Bruzewicz}.
+
+Those challenges could be overcome if the ion chain were to be broken into smaller pieces, or modules, which could perform operations at high-speed and efficacy within an individual module. That type of scheme would require some way of moving the quantum information between modules or even moving the ions themselves. This is possible given variable voltages in the ion trap electrodes that control the trapping potential. We can imagine breaking off subsets of ions from their modules and combining them in a new module to allow interaction. Then by returning them to their original positions, that quantum information has become more widely distributed. However, this process of splitting and joining many ion chains comes with it's own challenges and the ability to do it quickly and with high fidelity will be constrained by the size of the ion chain \cite{Bruzewicz}.
+
+The natural conclusion may be that one dimension is not an efficient method of distributing quantum information, in which case, we hope a move to a 2-dimensional array would alleviate some of these problems.
 
 \subsection{Planar Arrays}
 This is a test of the github branch.
