@@ -19,7 +19,7 @@ There are multiple choices of appropriate values here that define various confin
 \end{align}
 which dynamically confines particles in the $x$-$y$ plane and, at the same time, statically confines postively charged particles in the $z$-direction.
 
-Ultimately, we want to understand the quantum mechanical interaction of ions trapped in RF fields (and we'll see that the quantized motion of trapped ions is closely approximated by static potential harmonic oscillators). Before we get to that point, we'll continue approaching the situation from a classical perspective.
+Ultimately, the interaction of ions and electromagnetic fields is quantum mechanical in nature (the motion of the trapped ions is quantized and closely approximated by static potential harmonic oscillators). However, a classical formulation can provide a decent approximation in many settings \cite{Leibfried}.
 \subsubsection{Classical Equations of Motion}
 For simplicity, we'll consider motion only in the $x$-direction, but these equations are readily applied to motion in other directions. Using the potential in eq. (4), the motion of a particle with mass $m$ and charge $Z\abs{e}$ is given by
 \begin{align}
@@ -50,19 +50,51 @@ We can now approximate the motion of an ion in this potential with
 \begin{equation}
     x(t) \approx 2AC_0 \cos\left( \beta_x \frac{\omega_{RF}}{2} t \right) \left[ 1 - \frac{q_x}{2} \cos(\omega_{RF} t) \right].
 \end{equation}
-This equation contains both the "secular" motion, which is a harmonic oscillation at a frequency smaller than half the RF drive frequency, and the superimposed "micromotion" that occurs at the RF drive frequency and is generally time-dependent \cite{Bruzewicz}.
+This equation contains both the "secular" motion, which is a harmonic oscillation at a frequency smaller than half the RF drive frequency, and the superimposed "micromotion" that occurs at the RF drive frequency and is generally time-dependent \cite{Bruzewicz}. This micromotion, as we've mentioned before, is detrimental to the successful operation of a quantum computer. Hence, it's of much importance to understand the motion of trapped ions.
+\subsubsection{Quantum Mechanical Equations of Motion}
+A more realistic description of the motion of ions in an RF trap will require a quantum mechanical approach. We again follow in the footsteps of Leibfried \textit{et al.} and begin by writing the time-dependent potential $V(t)$ as
+\begin{equation}
+    V(t) = \frac{m}{2} W(t) \hat{x}^2
+\end{equation}
+where $W(t)$ is treated like a time-varying spring constant and is given by
+\begin{equation}
+    W(t) = \frac{\omega_{RF}^2}{4} [a_x + 2q_x \cos(\omega_RF t)].
+\end{equation}
+Using those equations, we can write the Hamiltonian of the motion, $\hat{H}^{(m)}$, which looks very similar to a static potential harmonic oscillator
+\begin{equation}
+    \hat{H}^{(m)} = \frac{\hat{p}^2}{2m} + \frac{m}{2} W(t) \hat{x}^2.
+\end{equation}
+Working directly off of Eq. (13) we get
+\begin{align}
+    \dot{\hat{x}} &= \frac{1}{i\hbar} [\hat{x}, \hat{H}^{(m)}] = \frac{\hat{p}}{m}\\
+    \dot{\hat{p}} &= \frac{1}{i\hbar} [\hat{p}, \hat{H}^{(m)}] = -m W(t) \hat{x}
+\end{align}
+which leads to
+\begin{equation}
+    \ddot{\hat{x}} + W(t) \hat{x} = 0
+\end{equation}
+This is very similar to the Mathieu equation we found in Eq. (9). Enough so, that we can replace the operator $\hat{x}$ with a function $u(t)$ and it becomes possible to find solutions to Eq. (16) from the special solutions to the Mathieu equation with boundary conditions
+\begin{equation}
+    u(0) = 1, \quad \dot{u}(0) = i\nu.
+\end{equation}
+As before, I'll gloss over much of the derivation (leaving the reader free to explore \textit{Quantum dynamics of single trapped ions} for themselves) \cite{Leibfried} and arrive at the solution
+\begin{equation}
+    \braket{x'}{n, t} = \exp \left[ -i \left(n + \frac{1}{2} \right) \nu t \right] \chi_n (t)    
+\end{equation}
+where $\ket{n, t}$ are a set of basis states for $n = 1, 2, ..., \infty$ and $\chi_n(t)$ is a complex function that includes, amongst other things, the classical micromotion term appearing as a pulsation in the wave function with the same period as the RF driving field.
+\subsection{Experimental Methods}
+Now that we've examined some of the theory behind the trapping potentials and the motion of trapped ions, we can take a closer look at some experimental setups involving 2D crystals of ions and Paul traps. The quadrupolar electrode layouts that we've discussed so far, also known as point traps, can be achieved in multiple ways (see Fig. \ref{fig:Paul traps}).
 
-\subsection{Coulomb Interaction}
-Run a manual sweep of anomalous airborne or electromagnetic readings. Radiation levels in our atmosphere have increased by 3,000 percent. Electromagnetic and subspace wave fronts approaching synchronization. What is the strength of the ship's deflector shields at maximum output? The wormhole's size and short period would make this a local phenomenon. Do you have sufficient data to compile a holographic simulation?
-
-I have reset the sensors to scan for frequencies outside the usual range. By emitting harmonic vibrations to shatter the lattices. We will monitor and adjust the frequency of the resonators. He has this ability of instantly interpreting and extrapolating any verbal communication he hears. It may be due to the envelope over the structure, causing hydrogen-carbon helix patterns throughout. I'm comparing the molecular integrity of that bubble against our phasers.
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]{Bruzewicz - Paul traps.png}
+    \caption{something something}
+    \label{fig:Paul traps}
+\end{figure*}
 
 We're acquainted with the wormhole phenomenon, but this... Is a remarkable piece of bio-electronic engineering by which I see much of the EM spectrum ranging from heat and infrared through radio waves, et cetera, and forgive me if I've said and listened to this a thousand times. This planet's interior heat provides an abundance of geothermal energy. We need to neutralize the homing signal.
 
 Communication is not possible. The shuttle has no power. Using the gravitational pull of a star to slingshot back in time? We are going to Starbase Montgomery for Engineering consultations prompted by minor read-out anomalies. Probes have recorded unusual levels of geological activity in all five planetary systems. Assemble a team. Look at records of the Drema quadrant. Would these scans detect artificial transmissions as well as natural signals?
-
-\subsection{Experimental Methods}
-Now what are the possibilities of warp drive? Cmdr Riker's nervous system has been invaded by an unknown microorganism. The organisms fuse to the nerve, intertwining at the molecular level. That's why the transporter's biofilters couldn't extract it. The vertex waves show a K-complex corresponding to an REM state. The engineering section's critical. Destruction is imminent. Their robes contain ultritium, highly explosive, virtually undetectable by your transporter.
 
 Communication is not possible. The shuttle has no power. Using the gravitational pull of a star to slingshot back in time? We are going to Starbase Montgomery for Engineering consultations prompted by minor read-out anomalies. Probes have recorded unusual levels of geological activity in all five planetary systems. Assemble a team. Look at records of the Drema quadrant. Would these scans detect artificial transmissions as well as natural signals?
 
