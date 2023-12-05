@@ -2,7 +2,7 @@
 It's safe to say that Paul traps have proven their worth as a valuable tool for working with trapped ions. Even outside of quantum computing, experiments involving trapped ions have provided crucial insight to many fields of physics over the last few decades. For us in particular, Paul traps utilizing RF electric fields and stationary qubit arrays are the focus of much research involving 2D Coulomb crystals. Given that importance, we'll take this opportunity to examine the theory behind Paul traps and how they may be implemented experimentally.
 
 \subsection{Theoretical Framework}
-Studying the work of Leibfried \textit{et al.}, we see a common model used to describe the electric potential $\Phi(x, y, z, t)$ of an RF trap \cite{Leibfried}. This assumes that the center of the trapping region has an approximately quadrupolar spatial shape, and that the function for the potential can be decomposed into a time-independent (static) part and a time-dependent part that depends on the RF drive frequency $\omega_{RF}$ such that
+Studying the work of Leibfried \textit{et al.}, we see a common model used to describe the electric potential $\Phi(x, y, z, t)$ of an RF trap \cite{Leibfried}. This assumes a quadrupolar electrode layout, also known as point traps \cite{Bruzewicz}, and that the function for the potential can be decomposed into a time-independent (static) part and a time-dependent part that depends on the RF drive frequency $\omega_{RF}$ such that
 \begin{align}
     \Phi(x, y, z, t) &= U \frac{1}{2}(\alpha x^2 + \beta y^2 + \gamma z^2)\\ 
     \nonumber&+ {\widetilde{U}} cos(\omega_{RF}t) \frac{1}{2}(\alpha' x^2 + \beta' x^2 + \gamma' z^2).
@@ -34,17 +34,23 @@ we can rewrite Eq. (7) in the form of the Mathieu equation
 \begin{equation}
     \derivative{^2 x}{\xi^2} + [a_x - 2q_x \cos(2\xi)] x = 0
 \end{equation}
-which is a known differential equation with periodic coefficients and having stable solutions that can be found with the Floquet theorem. 
+which is a known differential equation with periodic coefficients and having stable solutions that can be found with the Floquet theorem \cite{Leibfried}. 
 
-For the sake of brevity, I'll leave out the complete derivation, but it suffices to say that the coefficients are recursively defined, and a numerical value must be extracted by truncating the continued fractions at the desired level of accuracy. The higher order contributions in the continued fraction typically fall off quickly for the values of $a_x$ and $q_x$ used in Paul traps.
+For the sake of brevity, I'll leave out the complete derivation, but it suffices to say that the coefficients are recursively defined, and a numerical value must be extracted by truncating the continued fractions at the desired level of accuracy. The higher order contributions in the continued fraction typically fall off quickly for the values of $a_x$ and $q_x$ used in Paul traps \cite{Leibfried}.
 
-What that work has done is allowed us to describe a region of stability in the potential field, and in particular, a lowest stability region---one which contains the point $(a_i, q_i) = (0,0), \quad \forall \: i \in \{x, y, z\}$. The actual shape of the stability region still depends on the geometric factors $\alpha$, $\beta$, and $\gamma$ which themselves depend on the applied RF field and trap electrodes (See Fig. )
+What that work has done is allowed us to describe a region of stability in the potential field, and in particular, a lowest stability region---one which contains the point $(a_i, q_i) = (0,0), \quad \forall \: i \in \{x, y, z\}$. The actual shape of the stability region still depends on the geometric factors $\alpha$, $\beta$, and $\gamma$ which themselves depend on the applied RF field and trap electrodes. Looking at Fig. \ref{fig:Stability Region}(a) we see the lowest stability region of a Paul trap. $\beta_i$ represent the borderlines of stability, and in the case of the cylindrically symmetric Paul trap, $\beta_x = \beta_y$. A similar situation occurs for the linear trap which has borderlines of stability mirrored over the $q_x$ axis (Fig. \ref{fig:Stability Region}(b)).
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{Leibfried - Stability Region.png}
-    \caption{(\textbf{a}) yadda yadda}
+    \caption{(\textbf{a}) Stability diagram for a cylindrically symmetric RF trap. This is the case that $\alpha=\beta = -\gamma/2$ and $\alpha'=\beta' = -\gamma'/2$. Confinement is observed in all three axes. (\textbf{b}) For comparison, this is a stability diagram for a linear trap with $\alpha+\beta = -\gamma$, $\alpha' = -\beta'$, and $\gamma'=0$. Slightly modified from \textit{Quantum dynamics of single trapped ions} \cite{Leibfried}.}
     \label{fig:Stability Region}
 \end{figure}
+In general, however, it's not imperative that RF traps have an intrinsic symmetry and the borderlines of stability in those cases may not have such simple relationships \cite{Leibfried}.
 
+We can now approximate the motion of an ion in this potential with
+\begin{equation}
+    x(t) \approx 2AC_0 \cos\left( \beta_x \frac{\omega_{RF}}{2} t \right) \left[ 1 - \frac{q_x}{2} \cos(\omega_{RF} t) \right].
+\end{equation}
+This equation contains both the "secular" motion, which is a harmonic oscillation at a frequency smaller than half the RF drive frequency, and the superimposed "micromotion" that occurs at the RF drive frequency and is generally time-dependent \cite{Bruzewicz}.
 
 \subsection{Coulomb Interaction}
 Run a manual sweep of anomalous airborne or electromagnetic readings. Radiation levels in our atmosphere have increased by 3,000 percent. Electromagnetic and subspace wave fronts approaching synchronization. What is the strength of the ship's deflector shields at maximum output? The wormhole's size and short period would make this a local phenomenon. Do you have sufficient data to compile a holographic simulation?
