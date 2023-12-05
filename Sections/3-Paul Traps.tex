@@ -1,12 +1,51 @@
 \section{Paul Traps}
 It's safe to say that Paul traps have proven their worth as a valuable tool for working with trapped ions. Even outside of quantum computing, experiments involving trapped ions have provided crucial insight to many fields of physics over the last few decades. For us in particular, Paul traps utilizing RF electric fields and stationary qubit arrays are the focus of much research involving 2D Coulomb crystals. Given that importance, we'll take this opportunity to examine the theory behind Paul traps and how they may be implemented experimentally.
 
-\subsection{Equations of Motion}
-A common model used to describe the electric potential of an RF trap $\Phi(x, y, z, t)$ assumes that the center of the trapping region has an approximately quadrupolar spatial shape, and that the function for the potential can be decomposed into a time-independent (static) part and a time-dependent part that depends on the RF drive frequency $\omega_{RF}$:
+\subsection{Theoretical Framework}
+Studying the work of Leibfried \textit{et al.}, we see a common model used to describe the electric potential $\Phi(x, y, z, t)$ of an RF trap \cite{Leibfried}. This assumes that the center of the trapping region has an approximately quadrupolar spatial shape, and that the function for the potential can be decomposed into a time-independent (static) part and a time-dependent part that depends on the RF drive frequency $\omega_{RF}$ such that
 \begin{align}
     \Phi(x, y, z, t) &= U \frac{1}{2}(\alpha x^2 + \beta y^2 + \gamma z^2)\\ 
-    \nonumber&+ {\widetilde{U}} cos(\omega_{RF}t) \frac{1}{2}(\alpha 'x^2 + \beta 'x^2 + \gamma 'z^2)
+    \nonumber&+ {\widetilde{U}} cos(\omega_{RF}t) \frac{1}{2}(\alpha' x^2 + \beta' x^2 + \gamma' z^2).
 \end{align}
+Taking into consideration that this potential needs to satisfy Laplace's equation at all times, we get conditions for the geometric factors
+\begin{align}
+    &\alpha + \beta + \gamma = 0\\
+    \nonumber &\alpha' + \beta' + \gamma' = 0.
+\end{align}
+There are multiple choices of appropriate values here that define various confining fields. Of interest to us is the choice
+\begin{align}
+    -(\alpha + \beta) &= \gamma > 0\\
+    \nonumber \alpha' &= -\beta'
+\end{align}
+which dynamically confines particles in the $x$-$y$ plane and, at the same time, statically confines postively charged particles in the $z$-direction.
+
+Ultimately, we want to understand the quantum mechanical interaction of ions trapped in RF fields (and we'll see that the quantized motion of trapped ions is closely approximated by static potential harmonic oscillators). Before we get to that point, we'll continue approaching the situation from a classical perspective.
+\subsubsection{Classical Equations of Motion}
+For simplicity, we'll consider motion only in the $x$-direction, but these equations are readily applied to motion in other directions. Using the potential in eq. (4), the motion of a particle with mass $m$ and charge $Z\abs{e}$ is given by
+\begin{align}
+    \ddot{x} &= -\frac{Z\abs{e}}{m} \partialderivative{\Phi}{x}\\
+    \nonumber&= -\frac{Z\abs{e}}{m} \left[ U\alpha + \widetilde{U} \cos(\omega_{RF} t \alpha')\right] x
+\end{align}
+Using the substitutions
+\begin{equation}
+    \xi = \frac{\omega_{RF} t}{2}, \quad a_x = \frac{4Z\abs{e} U\alpha}{m \omega_{RF}^2}, \quad q_x = \frac{2 Z\abs{e} \widetilde{U}\alpha'}{m \omega_{RF}^2}
+\end{equation}
+we can rewrite Eq. (7) in the form of the Mathieu equation
+\begin{equation}
+    \derivative{^2 x}{\xi^2} + [a_x - 2q_x \cos(2\xi)] x = 0
+\end{equation}
+which is a known differential equation with periodic coefficients and having stable solutions that can be found with the Floquet theorem. 
+
+For the sake of brevity, I'll leave out the complete derivation, but it suffices to say that the coefficients are recursively defined, and a numerical value must be extracted by truncating the continued fractions at the desired level of accuracy. The higher order contributions in the continued fraction typically fall off quickly for the values of $a_x$ and $q_x$ used in Paul traps.
+
+What that work has done is allowed us to describe a region of stability in the potential field, and in particular, a lowest stability region---one which contains the point $(a_i, q_i) = (0,0), \quad \forall \: i \in \{x, y, z\}$. The actual shape of the stability region still depends on the geometric factors $\alpha$, $\beta$, and $\gamma$ which themselves depend on the applied RF field and trap electrodes (See Fig. )
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{Leibfried - Stability Region.png}
+    \caption{(\textbf{a}) yadda yadda}
+    \label{fig:Stability Region}
+\end{figure}
+
+
 \subsection{Coulomb Interaction}
 Run a manual sweep of anomalous airborne or electromagnetic readings. Radiation levels in our atmosphere have increased by 3,000 percent. Electromagnetic and subspace wave fronts approaching synchronization. What is the strength of the ship's deflector shields at maximum output? The wormhole's size and short period would make this a local phenomenon. Do you have sufficient data to compile a holographic simulation?
 
