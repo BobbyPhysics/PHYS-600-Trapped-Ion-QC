@@ -7,7 +7,7 @@ We'll take a look at at each of these categories in more detail to discuss the m
 
 \begin{figure}[ht]
     \includegraphics[width=\linewidth]{Bardin - Zeeman qubits.png}
-    \caption{(\textbf{a, b}) Two types of machined 3D traps. (\textbf{c}) Schematic of a surface-electrode trap. Shown in blue are integrated microwave antenna structures that allow for qubit control. The red spheres are ions, each in its own trapping potential well. (\textbf{d}) Real image of ions in a linear trap exhibiting fluorescence due to laser excitation. (\textbf{e, f}) Energy level diagrams comparing Zeeman qubit transitions to the closely related hyperfine qubit transitions. From \textit{Microwaves in Quantum Computing} \cite{Bardin}.}
+    \caption{(\textbf{a, b}) Two types of machined 3D traps. (\textbf{c}) Schematic of a surface-electrode trap. Shown in blue are integrated microwave antenna structures that allow for qubit control. The red spheres are ions, each in its own trapping potential well. (\textbf{d}) Real image of ions in a linear trap exhibiting fluorescence due to laser excitation. (\textbf{e, f}) Energy level diagrams comparing Zeeman qubit transitions to the closely related hyperfine qubit transitions. Figure borrowed from \textit{Microwaves in Quantum Computing} \cite{Bardin}. Description is my own.}
     \label{fig:Zeeman qubit}
 \end{figure}
 
@@ -28,7 +28,7 @@ However, even with that downside, Zeeman qubits offer the advantage of being res
 
 \begin{figure}[!htb]
     \includegraphics[width=\linewidth]{Brown - Hyperfine qubits.png}
-    \caption{Energy level diagram for \ion{171}{Yb}{+} and \ion{174}{Yb}{+} ions showing the potentials errors that can occur for each scattering event. These are assuming the ion always starts in a lower qubit state. From \textit{Comparing Zeeman qubits to hyperfine qubits in the context of the surface code: \ion{174}{Yb}{+} and \ion{171}{Yb}{+}} \cite{Brown}.}
+    \caption{Energy level diagram for \ion{171}{Yb}{+} and \ion{174}{Yb}{+} ions showing the potentials errors that can occur for each scattering event. These are assuming the ion always starts in a lower qubit state. Figured borrowed from \textit{Comparing Zeeman qubits to hyperfine qubits in the context of the surface code: \ion{174}{Yb}{+} and \ion{171}{Yb}{+}} \cite{Brown}. Description is my own.}
     \label{fig:Yb qubit}
 \end{figure}
 
@@ -46,7 +46,7 @@ where $g_J$ and $g_I$ are the electronic and nuclear Land\'e g-factors respectiv
 The benefits that hyperfine qubits possess don't come without their share of drawbacks. The most prominent source of errors in hyperfine qubits is population leakage outside the qubit subspace. Our idealized qubit operates as a two-level system, however, there exist additional levels in the physical system beyond the two qubit states. If the ion leaks into one of these undesirable states, that introduces errors. These types of errors are particularly harmful since standard error correction methods are not effective for treating them. There is research from Hayes \textit{et al.} that shows leakage can be suppressed by pumping from the leakage state back into the qubit state by utilizing the quadrupole transition (see Fig. \ref{fig:Leakage}) \cite{Hayes}. 
 \begin{figure}[ht]
     \includegraphics[width=\linewidth]{Hayes - Leakage.png}
-    \caption{Energy level diagram for \ion{171}{Yb}{+}. In this repump scheme, leaked population is first driven to the \state{2}{{D}}{3/2} by the \SI{435}{\nano\meter} quadrupole transition. In the next step, the population is driven to \state{3}{[3/2]}{1/2} by the \SI{935}{\nano\meter} dipole transition. Completing the cycle, the \state{3}{[3/2]}{1/2} states decay to \state{2}{{S}}{1/2} with high probability. From \textit{Eliminating Leakage Errors in Hyperfine Qubits} \cite{Hayes}.}
+    \caption{Energy level diagram for \ion{171}{Yb}{+}. In this repump scheme, leaked population is first driven to the \state{2}{{D}}{3/2} by the \SI{435}{\nano\meter} quadrupole transition. In the next step, the population is driven to \state{3}{[3/2]}{1/2} by the \SI{935}{\nano\meter} dipole transition. Completing the cycle, the \state{3}{[3/2]}{1/2} states decay to \state{2}{{S}}{1/2} with high probability. Figure borrowed from \textit{Eliminating Leakage Errors in Hyperfine Qubits} \cite{Hayes}. Description is my own.}
     \label{fig:Leakage}
 \end{figure}
 
@@ -57,7 +57,7 @@ Stimulating these transitions for fine structure qubits is not much different fr
 
 \begin{figure}[t]
     \includegraphics[width=\linewidth]{Toyoda - Fine Structure.png}
-    \caption{Energy level diagram for \ion{40}{Ca}{+}. The quadrupole transition between \state{}{{S}}{1/2} and \state{}{{D}}{5/2} is used to apply a conditional phase shift while the stimulated Raman transition is used to switch between qubit states \state{}{{D}}{5/2} and \state{}{D}{3/2}, thereby implementing a CZ gate. From \textit{Quantum gate using qubit states separated by terahertz} \cite{Toyoda}.}
+    \caption{Energy level diagram for \ion{40}{Ca}{+}. The quadrupole transition between \state{}{{S}}{1/2} and \state{}{{D}}{5/2} is used to apply a conditional phase shift while the stimulated Raman transition is used to switch between qubit states \state{}{{D}}{5/2} and \state{}{D}{3/2}, thereby implementing a CZ gate. Figure borrowed from \textit{Quantum gate using qubit states separated by terahertz} \cite{Toyoda}. Description is my own.}
     \label{fig:Fine Structure}
 \end{figure}
 
@@ -74,6 +74,6 @@ Optical qubits are being studied beyond just gate operations as well. The future
 
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{Akerman - Optical Qubits.png}
-    \caption{(a) Energy level diagram for \ion{88}{Sr}{+}. The transitions depicted with straight lines are driven by lasers, while the wavy lines indicate transitions due to spontaneous emission. The thick wavy line between the \state{5}{P}{1/2} $\rightarrow$ \state{5}{S}{1/2} transition represents the fluorescence used for detection. (b) Measurements of two-qubit fluorescence. From \textit{Universal gate-set for trapped-ion qubits using a narrow linewidth diode laser} \cite{Akerman}.}
+    \caption{(a) Energy level diagram for \ion{88}{Sr}{+}. The transitions depicted with straight lines are driven by lasers, while the wavy lines indicate transitions due to spontaneous emission. The thick wavy line between the \state{5}{P}{1/2} $\rightarrow$ \state{5}{S}{1/2} transition represents the fluorescence used for detection. (b) Measurements of two-qubit fluorescence. Figure borrowed from \textit{Universal gate-set for trapped-ion qubits using a narrow linewidth diode laser} \cite{Akerman}. Description is my own.}
     \label{fig:Optical}
 \end{figure}
